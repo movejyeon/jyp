@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JYP Entertainment</title>
+    <link href="css/index.css" rel="stylesheet" />
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <link href="img/favicon.ico" rel="shortcut icon"></link>
+    <script type="text/javascript">
+      window.onload = function () {
+        var elm = "#wrap>.main";
+        $(elm).each(function (index) {
+          // 개별적으로 Wheel 이벤트 적용
+          $(this).on("mousewheel DOMMouseScroll", function (e) {
+            e.preventDefault();
+            var delta = 0;
+            if (!event) event = window.event;
+            if (event.wheelDelta) {
+              delta = event.wheelDelta / 120;
+              if (window.opera) delta = -delta;
+            } else if (event.detail) delta = -event.detail / 3;
+            var moveTop = $(window).scrollTop();
+            var elmSelecter = $(elm).eq(index);
+            // 마우스휠을 위에서 아래로
+            if (delta < 0) {
+              if ($(elmSelecter).next() != undefined) {
+                try {
+                  moveTop = $(elmSelecter).next().offset().top;
+                } catch (e) {}
+              }
+              // 마우스휠을 아래에서 위로
+            } else {
+              if ($(elmSelecter).prev() != undefined) {
+                try {
+                  moveTop = $(elmSelecter).prev().offset().top;
+                } catch (e) {}
+              }
+            }
+
+            // 화면 이동 0.8초(800)
+            $("html,body")
+              .stop()
+              .animate(
+                {
+                  scrollTop: moveTop + "px",
+                },
+                {
+                  duration: 800,
+                  complete: function () {},
+                }
+              );
+          });
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- 헤더입니당 -->
+      <header class="main">
+        <h1>
+          <a href="index.html">
+            <img src="img/logo_white.svg" alt="jyp 로고" />
+          </a>
+        </h1>
+        <div class="menu_bar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu">
+          <ul>
+            <li>
+              <a href="#con1">
+                <i>ABOUT JYP</i>
+              </a>
+              <span></span>
+            </li>
+            <li>
+              <a href="#con2">
+                <i> ARTIST</i>
+              </a>
+              <span></span>
+            </li>
+            <li>
+              <a href="#con3">
+                <i>ALBUM</i>
+              </a>
+              <span></span>
+            </li>
+            <li>
+              <a href="#con4">
+                <i>OFFICIAL</i>
+              </a>
+              <span></span>
+            </li>
+            <li>
+              <a href="#con5">
+                <i>AUDITION</i>
+              </a>
+              <span></span>
+            </li>
+            <li>
+              <a href="#con6">
+                <i>CONTACT</i>
+              </a>
+              <span></span>
+            </li>
+          </ul>
+          <img src="img/logo_white.svg" alt="배경 로고" />
+        </div>
+      </header>
+
+      <!-- 비쥬얼입니당 -->
+      <div id="visual" class="main">
+        <div class="visual_inner">
+          <ul>
+            <li>
+              <video
+                src="img/visual_movie.mp4"
+                muted
+                loop
+                autoplay
+                playsinline
+              ></video>
+              <div class="video_logo">
+                <img src="img/visual_logo.png" alt="jyp 로고" />
+              </div>
+            </li>
+            <li>
+              <div class="slogan1 slogan">
+                <img src="img/visual_slogan_1.svg" alt="leader in" />
+              </div>
+              <div class="slogan2 slogan">
+                <img src="img/visual_slogan_2.svg" alt="entertainment" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 컨테이너 1번 입니당 (회사소개)-->
+      <div id="con1" class="main">
+        <div class="con1_inner">
+          <p class="value">What are our values?</p>
+          <h2>
+            <i>L</i>
+            <i>E</i>
+            <i>A</i>
+            <i>D</i>
+            <i>E</i>
+            <i>R</i>
+            <i>I</i>
+            <i>N</i>
+            <br />
+            <i>E</i>
+            <i>N</i>
+            <i>T</i>
+            <i>E</i>
+            <i>R</i>
+            <i>T</i>
+            <i>A</i>
+            <i>I</i>
+            <i>N</i>
+            <i>M</i>
+            <i>E</i>
+            <i>N</i>
+            <i>T</i>
+          </h2>
+          <div class="line"></div>
+          <div class="value_text">
+            <p>
+              <span><strong>JYP엔터테인먼트는</strong></span>
+            </p>
+            <p>
+              <span
+                >엔터테인먼트 산업을 리드하는 창의적, 능동적 인재의 발굴과
+                양성에 힘쓰며</span
+              >
+            </p>
+            <p>
+              <span
+                >선도하는 기업(Leading Company), 존경받는 기업(Respected
+                Company)이라는</span
+              >
+            </p>
+            <p>
+              <span
+                >핵심 가치체계 아래
+                <strong>'Leader In Entertainment'</strong> 의 가치와 목표를
+                실현하고 있습니다.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 컨테이너 2번 입니당 (아티스트)-->
+      <div id="con2" class="main">
+        <div class="con2_inner">
+          <div class="con2_top">
+            <span></span>
+            <h3>JYP ARTIST</h3>
+          </div>
+          <ul class="artist">
+            <li>
+              <a href="#">
+                <img src="img/artist_jyp.jpg" alt="jyp" />
+                <div class="veiw_more">
+                  <p>J.Y PARK</p>
+                </div>
+              </a>
+              <p class="artist_name">J.Y PARK</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/artist_2pm.jpg" alt="2pm" />
+                <div class="veiw_more">
+                  <p>2PM</p>
+                </div>
+              </a>
+              <p class="artist_name">2PM</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/artist_day6.jpg" alt="day6" />
+                <div class="veiw_more">
+                  <p>DAY6</p>
+                </div>
+              </a>
+              <p class="artist_name">DAY6</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/artist_twice.jpg" alt="twice" />
+                <div class="veiw_more">
+                  <p>TWICE</p>
+                </div>
+              </a>
+              <p class="artist_name">TWICE</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/artist_straykids.jpg" alt="straykids" />
+                <div class="veiw_more">
+                  <p>StrayKids</p>
+                </div>
+              </a>
+              <p class="artist_name">StrayKids</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/artist_boystory.jpg" alt="boystory" />
+                <div class="veiw_more">
+                  <p>BOY STORY</p>
+                </div>
+              </a>
+              <p class="artist_name">BOY STORY</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/artist_itzy.jpg" alt="itzy" />
+                <div class="veiw_more">
+                  <p>ITZY</p>
+                </div>
+              </a>
+              <p class="artist_name">ITZY</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/artist_yaochen.png" alt="yaochen" />
+                <div class="veiw_more">
+                  <p>YAOCHEN</p>
+                </div>
+              </a>
+              <p class="artist_name">YAOCHEN</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/artist_niziu.jpg" alt="niziu" />
+                <div class="veiw_more">
+                  <p>NiziU</p>
+                </div>
+              </a>
+              <p class="artist_name">NiziU</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/artist_xdinaryheroes.jpg" alt="xdinaryheroes" />
+                <div class="veiw_more">
+                  <p>Xdinary Heroes</p>
+                </div>
+              </a>
+              <p class="artist_name">Xdinary Heroes</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/artist_nmixx.jpg" alt="nmixx" />
+                <div class="veiw_more">
+                  <p>NMIXX</p>
+                </div>
+              </a>
+              <p class="artist_name">NMIXX</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/artist_vcha.jpg" alt="vcha" />
+                <div class="veiw_more">
+                  <p>VCHA</p>
+                </div>
+              </a>
+              <p class="artist_name">VCHA</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 컨테이너 3번 입니당 (앨범)-->
+      <div id="con3" class="main">
+        <div class="con3_inner">
+          <div class="con3_top">
+            <h3>LATEST ALBUM FROM JYP</h3>
+            <a href="#"> veiw more </a>
+          </div>
+          <div class="new_bg_wrap">
+            <div class="new_bg"></div>
+            <div class="new_bg"></div>
+            <div class="new_bg"></div>
+            <div class="new_bg"></div>
+            <div class="new_bg"></div>
+          </div>
+          <div class="album_wrap">
+            <div class="album_cover">
+              <ul>
+                <li>
+                  <img src="img/album_cover_nmixx.jpg" alt="엔믹스 앨범커버" />
+                </li>
+                <li>
+                  <img src="img/album_cover_vcha.jpg" alt="vcha 앨범커버" />
+                </li>
+                <li>
+                  <img src="img/album_cover_jyp.jpg" alt="박진영 앨범커버" />
+                </li>
+                <li>
+                  <img
+                    src="img/album_cover_straykids.jpg"
+                    alt="스트레이키즈 앨범커버"
+                  />
+                </li>
+                <li>
+                  <img src="img/album_cover_2pm.jpeg" alt="투피엠 앨범커버" />
+                </li>
+                <li>
+                  <img src="img/album_cover_nmixx.jpg" alt="엔믹스 앨범커버" />
+                </li>
+              </ul>
+            </div>
+            <div class="album_text">
+              <ul>
+                <li class="on">
+                  <p>NMIXX</p>
+                  <h3><i>Soñar (Breaker)</i></h3>
+                  <p></p>
+                  <p>
+                    'Soñar (Breaker)'는 시네마틱한 intro로 웅장하게 시작되어
+                    라틴 풍의<br />
+                    힙합 장르와 UK Garage 장르를 MIXX한 곡이다.
+                  </p>
+                  <p>Release Date 2023-12-04</p>
+                </li>
+                <li>
+                  <p>VCHA</p>
+                  <h3><i>Ready for the World</i></h3>
+                  <p></p>
+                  <p>
+                    JYP 글로벌 걸그룹 VCHA, 12월 1일 오후 2시 디지털 싱글 ‘Ready
+                    for the World’ 발매와<br />동시에 2024년 1월 26일 공식
+                    데뷔일 깜짝 공개!
+                  </p>
+                  <p>Release Date 2023-12-01</p>
+                </li>
+                <li>
+                  <p>J.Y. Park</p>
+                  <h3><i>Changed Man</i></h3>
+                  <p></p>
+                  <p>
+                    '리빙 레전드' 박진영(J.Y. Park) 11월 20일 새 디지털 싱글
+                    'Changed Man' 및 동명 타이틀곡 발매
+                  </p>
+                  <p>Release Date 2023-11-20</p>
+                </li>
+                <li>
+                  <p>Stray Kids</p>
+                  <h3><i>樂-STAR</i></h3>
+                  <p></p>
+                  <p>
+                    '글로벌 K팝 대세' 스트레이 키즈, 11월 10일 새 미니 앨범
+                    '樂-STAR' 및 타이틀곡 '락 (樂)' 발매!
+                  </p>
+                  <p>Release Date 2023-11-10</p>
+                </li>
+                <li>
+                  <p>2PM</p>
+                  <h3><i>Can I (Korean Ver.)</i></h3>
+                  <p></p>
+                  <p>
+                    'Can I (Korean Ver.)', 이준호 작사 참여 '섬세한 감성 지닌
+                    세레나데'
+                  </p>
+                  <p>Release Date 2023-11-03</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="album_btn_bg prev_bg">
+            <img
+              class="album_btn prev_btn"
+              src="img/btn-next.png"
+              alt="이전버튼"
+            />
+          </div>
+          <div class="album_btn_bg next_bg">
+            <img
+              class="album_btn next_btn"
+              src="img/btn-next.png"
+              alt="다음버튼"
+            />
+          </div>
+          <ul class="nav">
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 컨테이너 4번 입니당 (뮤비)-->
+      <div id="con4" class="main">
+        <div class="con4_inner">
+          <ul class="con4_line1">
+            <li><i>JYP OFFICIAL</i></li>
+            <li><i>JYP OFFICIAL</i></li>
+            <li><i>JYP OFFICIAL</i></li>
+            <li><i>JYP OFFICIAL</i></li>
+            <li><i>JYP OFFICIAL</i></li>
+            <li><i>JYP OFFICIAL</i></li>
+          </ul>
+          <ul class="con4_line2">
+            <li><i>JYP OFFICIAL</i></li>
+            <li><i>JYP OFFICIAL</i></li>
+            <li><i>JYP OFFICIAL</i></li>
+            <li><i>JYP OFFICIAL</i></li>
+            <li><i>JYP OFFICIAL</i></li>
+            <li><i>JYP OFFICIAL</i></li>
+          </ul>
+          <div class="movie_wrap">
+            <div class="movie_text">
+              <ul>
+                <li>
+                  <i>Soñar (Breaker)</i>
+                  <p>NMIXX</p>
+                </li>
+                <li>
+                  <i>Changed Man</i>
+                  <p>J.Y PARK</p>
+                </li>
+                <li>
+                  <i> Break the Brake </i>
+                  <p>STRAY KIDS</p>
+                </li>
+                <li>
+                  <i>Ready for the World</i>
+                  <p>VCHA</p>
+                </li>
+                <li>
+                  <i>이것밖에는 없다</i>
+                  <p>Young K</p>
+                </li>
+              </ul>
+              <img
+                class="con4_prev con4_btn"
+                src="img/movie_arrow.svg"
+                alt="뮤직비디오 이전버튼"
+              />
+              <img
+                class="con4_next con4_btn"
+                src="img/movie_arrow.svg"
+                alt="뮤직비디오 다음버튼"
+              />
+            </div>
+            <div class="movie">
+              <ul>
+                <li class="movie1">
+                  <div class="play">
+                    <a href="https://www.youtube.com/watch?v=MMtRxcy8PX0">
+                      <img src="img/movie_more.svg" alt="뮤직비디오 재생버튼" />
+                    </a>
+                  </div>
+                </li>
+                <li class="movie2">
+                  <div class="play">
+                    <a href="https://www.youtube.com/watch?v=NCFgWex8gJA">
+                      <img src="img/movie_more.svg" alt="뮤직비디오 재생버튼" />
+                    </a>
+                  </div>
+                </li>
+                <li class="movie3">
+                  <div class="play">
+                    <a href="https://www.youtube.com/watch?v=EsT8nQtFHt0">
+                      <img src="img/movie_more.svg" alt="뮤직비디오 재생버튼" />
+                    </a>
+                  </div>
+                </li>
+                <li class="movie4">
+                  <div class="play">
+                    <a href="https://www.youtube.com/watch?v=wrnaIP-idnA">
+                      <img src="img/movie_more.svg" alt="뮤직비디오 재생버튼" />
+                    </a>
+                  </div>
+                </li>
+                <li class="movie5">
+                  <div class="play">
+                    <a href="https://www.youtube.com/watch?v=on2HSs_uXSw">
+                      <img src="img/movie_more.svg" alt="뮤직비디오 재생버튼" />
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 컨테이너 5번입니당 (오디션)-->
+      <div id="con5" class="main">
+        <div class="con5_inner">
+          <div>
+            <i>JYP ONLINE AUDITION</i>
+            <span></span>
+          </div>
+          <div>
+            <i>CHALLENGE NOW!</i>
+            <span></span>
+          </div>
+          <ul>
+            <li>
+              글로벌 K-POP 스타가 될 인재를 찾고 있습니다.<br />
+              지금 JYP와 함께 그 주인공이 되어보세요!
+            </li>
+            <li>
+              <div class="audition_btn">
+                <div class="bg"></div>
+                <a href="#"> 지원하기 　　→ </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 컨테이너 6번 입니당 (컨택트)-->
+      <div id="con6" class="main">
+        <div class="con6_inner">
+          <div class="con6_top">
+            <span></span>
+            <h3>
+              JYP<br />
+              CONTACT
+            </h3>
+          </div>
+          <ul>
+            <li>
+              <a href="#">
+                <img class="map" src="img/map_img.jpg" alt="JYP 지도" />
+              </a>
+            </li>
+            <li>
+              <ul>
+                <li><img src="img/logo_white.svg" alt="JYP 로고" /></li>
+                <li>
+                  서울특별시 강동구 강동대로 205 (성내동, JYP Center) 우)
+                  05407<br />
+                  205, Gangdong daero, Gangdong-gu, Seoul, Republic of Korea<br /><br />
+                  02-2225-8100
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="contact_line">
+            <div><i>CONTACT JYP</i></div>
+            <div><i>CONTACT JYP</i></div>
+            <div><i>CONTACT JYP</i></div>
+            <div><i>CONTACT JYP</i></div>
+            <div><i>CONTACT JYP</i></div>
+            <div><i>CONTACT JYP</i></div>
+          </div>
+          <p>© JYP ENTERTAINMENT Corp.</p>
+          <div class="top_btn">
+            <a href="#visual"> TOP </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 스크립트입니당 -->
+    <script src="js/index.js"></script>
+  </body>
+</html>
